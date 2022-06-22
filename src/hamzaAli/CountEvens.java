@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class CountEvens {
     public static void main(String[] args) {
-        ArrayList<Integer> list = new ArrayList<>(Arrays.asList(2, 12, 13, 1, 3, 4));
+        ArrayList<Integer> list = new ArrayList<>(Arrays.asList(2, 12, 13, 11, 14, 20, 200, 1, 3, 4));
         System.out.println(countEven(list));
 
     }
