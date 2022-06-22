@@ -2,7 +2,7 @@ package hamzaAli;
 
 public class MiddleTwo {
     public static void main(String[] args) {
-        System.out.println(middleTwo("apple" ));
+        System.out.println(middleTwo("apples" ));
     }
 
     public static String middleTwo(String str) {
