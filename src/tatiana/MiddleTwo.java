@@ -19,7 +19,7 @@ public class MiddleTwo {
            result+=("Invalid string");
 
         }else {
-             result+=str.charAt(str.length()/2)+str.charAt(str.length()/2);
+             result+=str.substring((str.length()/2)-1,(str.length()/2)+1);
         }
         return result;
 
