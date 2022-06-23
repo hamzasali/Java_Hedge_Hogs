@@ -1,12 +1,12 @@
 package Marika;
 
-public class CountEvens {
+public class CountEven {
     public static int countEven(int [] array) {
         int count = 0;
         for (int each : array) {
-           if(each % 2 ==0) {
-               count++;
-           }
+            if(each % 2 ==0) {
+                count++;
+            }
 
         }
         return count;
