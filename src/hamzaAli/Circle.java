@@ -8,7 +8,7 @@ public class Circle {
     //decide the type of your variables (static or instance)
 
     private double radius;
-    private int numberOfCircles;
+    private static int numberOfCircles;
 
     private static double pi = 3.14;
 
@@ -16,6 +16,7 @@ public class Circle {
     //default constructor should increase the number of object when a new object created
 
     public Circle() {
+        numberOfCircles++;
     }
 
 
@@ -23,6 +24,7 @@ public class Circle {
     //and not allowed to initialize object with the radius value lower than Zero.
 
     public Circle(double radius) {
+        numberOfCircles++;
         setRadius(radius);
     }
 
@@ -47,6 +49,10 @@ public class Circle {
 
     //do not allow any object to change value of static variable just get the current
     //value of numberOfCircle
+
+    public static int getNumberOfCircles() {
+        return numberOfCircles;
+    }
 
 
     //calculate area of Circle
