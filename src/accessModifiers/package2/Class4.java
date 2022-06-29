@@ -1,6 +1,6 @@
 package accessModifiers.package2;
 
-import package1.Class1;
+import accessModifiers.package1.Class1;
 
 public class Class4 extends Class1 {
 
