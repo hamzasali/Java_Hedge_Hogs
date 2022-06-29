@@ -3,11 +3,15 @@ package hamzaAli;
 public class TestCircle {
     public static void main(String[] args) {
 
-        Circle circle = new Circle();
+        Circle circle1 = new Circle();
 
-        circle.setRadius(2);
+        circle1.setRadius(2);
 
-        System.out.println(circle.calcArea());
+        System.out.println(circle1.calcArea());
+
+        Circle circle2 = new Circle(6);
+
+        System.out.println(circle2.calcPerimeter());
 
     }
 }
