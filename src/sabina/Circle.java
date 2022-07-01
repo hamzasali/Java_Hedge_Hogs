@@ -56,8 +56,10 @@ public class Circle {
 
 
 
-    //testing:
+
     public static void main(String[] args) {
+
+        System.out.println("-------------------Test_Circle_Objects----------------------");
 
         Circle circle = new Circle();
         System.out.println(circle);
