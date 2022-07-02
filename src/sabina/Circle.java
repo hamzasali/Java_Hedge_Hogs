@@ -7,9 +7,9 @@ public class Circle {
     public static double pi;
     public static int numberOfCircle;
 
-
+//I think you did a great job. Perfect Sabina. What do you think about defining pi as final.!!!!!!
     static{
-        numberOfCircle = 0;
+        numberOfCircle = 0;//the initial value of numberOfCircle is already 0. No need to initialize.
         pi = 3.14;
     }
 
