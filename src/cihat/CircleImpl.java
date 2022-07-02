@@ -34,7 +34,7 @@ public class CircleImpl {
     public void setRadius(double radius) {//we defined the constraints and make a detailed contract with user.
         if (radius < 0) {
             System.out.println("Radius can not be lower than Zero. Previous value has kept");
-            return;
+          radius=this.radius;
         }
         this.radius = radius;
     }
