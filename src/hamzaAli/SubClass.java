@@ -3,7 +3,7 @@ package hamzaAli;
 public class SubClass extends Abstract {
 
     @Override
-    public void a_method() {
+    public void a_method() { //implementing abstract method
         System.out.println("This is abstract method");
     }
 
@@ -11,8 +11,8 @@ public class SubClass extends Abstract {
 
         SubClass subClass = new SubClass();
 
-        subClass.a_method();
-        subClass.n_method();
+        subClass.a_method();//calling abstract method
+        subClass.n_method();//calling normal method
 
     }
 }

@@ -1,7 +1,7 @@
 package hamzaAli;
 
 public abstract class Abstract {
-    public Abstract() {
+    public Abstract() {//Constructor
         System.out.println("This is constructor of the abstract class");
     }
 
