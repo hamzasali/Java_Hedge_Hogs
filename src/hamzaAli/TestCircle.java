@@ -13,5 +13,7 @@ public class TestCircle {
 
         System.out.println(circle2.calcPerimeter());
 
+        System.out.println(Circle.getNumberOfCircles());
+
     }
 }
