@@ -1,6 +1,6 @@
 package sabina.task2;
 
-public class Manager  extends Employee{
+public class Manager  extends Member{
 
     private String department;
 
@@ -12,8 +12,8 @@ public class Manager  extends Employee{
         this.department = department;
     }
 
-    public Manager(String name, int age, long phoneNumber, String address, double salary, String specialization, String department) {
-        super(name, age, phoneNumber, address, salary, specialization);
+    public Manager(String name, int age, long phoneNumber, String address, double salary, String department) {
+        super(name, age, phoneNumber, address, salary);
         setDepartment(department);
     }
 
