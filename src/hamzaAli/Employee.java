@@ -3,9 +3,12 @@ package hamzaAli;
 public class Employee extends Member {
 
 
-    public Employee(String name, int age, long phoneNumber, String address, double salary) {
+    public Employee(String name, int age, long phoneNumber, String address, double salary, String specialization, String department) {
         super(name, age, phoneNumber, address, salary);
+        setDepartment(department);
+        setSpecialization(specialization);
     }
+
     private String specialization, department;
 
     public String getSpecialization() {
@@ -27,7 +30,7 @@ public class Employee extends Member {
 
     public static void main(String[] args) {
 
-        Employee employee =  new Employee("Hamza", 23, 1234567890L, "234 AVE U, Brooklyn, NY 11223", 150000);
+        Employee employee = new Employee("Hamza", 23, 1234567890L, "234 AVE U, Brooklyn, NY 11223", 150000, "Developing", "Bug detecting");
         System.out.println(employee);
     }
 }
