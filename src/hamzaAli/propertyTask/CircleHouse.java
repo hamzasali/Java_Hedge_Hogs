@@ -3,7 +3,7 @@ package hamzaAli.propertyTask;
 public class CircleHouse extends Property {
     private double radius;
 
-    private static double PI = 3.14;
+    private final static double PI = 3.14;
 
     public CircleHouse(double radius) {
 

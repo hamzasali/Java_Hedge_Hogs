@@ -59,23 +59,26 @@ public class TestPropertyObjects {
 
         list.addAll(Arrays.asList(properties));
 
-        System.out.println(matching(list));
+        System.out.println(matching(list, 600));
 
     }
 
-    public static ArrayList<Property> matching(ArrayList<Property> list) {
+    public static ArrayList<Property> matching(ArrayList<Property> list, double minimumSquare) {
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the requested space");
-        double request = scanner.nextDouble();
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Enter the requested space");
+//        double request = scanner.nextDouble();
 
-        ArrayList<Property> match = new ArrayList<>();
-        for (Property each : list) {
-            if (each.area() >= request) {
-                match.add(each);
-            }
-        }
-        return match;
+//        ArrayList<Property> match = new ArrayList<>();
+//        for (Property each : list) {
+//            if (each.area() >= minimumSquare) {
+//                match.add(each);
+//            }
+//        }
+//        return match;
+
+        list.removeIf(p-> minimumSquare>p.area());
+        return list;
     }
 
 

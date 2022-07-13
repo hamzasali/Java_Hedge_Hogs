@@ -21,7 +21,7 @@ public abstract class Property {
 
     @Override
     public String toString() {
-        return "Property{" +
+        return getClass().getSimpleName() + "{" +
                 "name='" + name + '\'' +
                 ", area='" + area() +
                 '}';
