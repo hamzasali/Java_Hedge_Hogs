@@ -2,10 +2,9 @@ package hamzaAli.propertyTask;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
-public class Test {
+public class TestPropertyObjects {
     public static void main(String[] args) {
 
         ArrayList<Property> list = new ArrayList<>();
