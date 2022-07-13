@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public abstract class Property {
     private String name;
 
-    public Property() {
-        setName(getClass().getSimpleName());
+    public Property(String name) {
+        setName(name);
     }
 
     public String getName() {

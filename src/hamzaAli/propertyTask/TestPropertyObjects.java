@@ -50,16 +50,16 @@ public class TestPropertyObjects {
         System.out.println(matching(list));*/
 
         // created Array with all the objs inside then converting into ArrayList
-        Property[] properties = {new SquareHouse(5), new SquareHouse(15), new SquareHouse(52),
-                new CircleHouse(10), new CircleHouse(15), new CircleHouse(20),
-                new RectangleHouse(10, 15), new RectangleHouse(13, 25),
-                new RectangleHouse(19, 5)};
+        Property[] properties = {new SquareHouse("Square House 1",5), new SquareHouse("Square House 2",15), new SquareHouse("Square House 3",52),
+                new CircleHouse("Circle House 1",10), new CircleHouse("Circle House 2",15), new CircleHouse("Circle House 3",20),
+                new RectangleHouse("Rectangle House 1",10, 15), new RectangleHouse("Rectangle House 2",13, 25),
+                new RectangleHouse("Rectangle House 3",19, 5)};
 
         System.out.println(Arrays.toString(properties));
 
         list.addAll(Arrays.asList(properties));
 
-        System.out.println(matching(list, 600));
+        System.out.println(matchingName(list, 600));
 
     }
 
@@ -81,5 +81,25 @@ public class TestPropertyObjects {
         return list;
     }
 
+    public static ArrayList<String> matchingName(ArrayList<Property> list, double minimumSquare) {
 
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Enter the requested space");
+//        double request = scanner.nextDouble();
+
+//        ArrayList<Property> match = new ArrayList<>();
+//        for (Property each : list) {
+//            if (each.area() >= minimumSquare) {
+//                match.add(each);
+//            }
+//        }
+//        return match;
+
+        ArrayList<String> namesOfHouses = new ArrayList<>();
+        list.removeIf(p-> minimumSquare>p.area());
+        for (Property eachName : list) {
+            namesOfHouses.add(eachName.getName());
+        }
+        return namesOfHouses;
+    }
 }

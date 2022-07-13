@@ -4,7 +4,8 @@ public class RectangleHouse extends Property {
 
     private double length, width;
 
-    public RectangleHouse(double length, double width) {
+    public RectangleHouse(String name,double length, double width) {
+        super(name);
         setLength(length);
         setWidth(width);
     }

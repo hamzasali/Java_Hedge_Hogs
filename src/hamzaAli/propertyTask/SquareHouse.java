@@ -3,8 +3,8 @@ package hamzaAli.propertyTask;
 public class SquareHouse extends Property {
     private double side;
 
-    public SquareHouse(double side) {
-
+    public SquareHouse(String name, double side) {
+        super(name);
         setSide(side);
     }
 

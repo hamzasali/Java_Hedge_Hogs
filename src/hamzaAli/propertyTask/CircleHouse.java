@@ -5,8 +5,8 @@ public class CircleHouse extends Property {
 
     private final static double PI = 3.14;
 
-    public CircleHouse(double radius) {
-
+    public CircleHouse(String name, double radius) {
+        super(name);
         setRadius(radius);
     }
 
