@@ -67,4 +67,11 @@ public class Circle {
         return 2 * pi * radius;
     }
 
+    public String toString() {
+        return "Circle{" +
+                "radius=" + radius +
+                ", area=" + calcArea() +
+                ", perimeter=" + calcPerimeter() +
+                '}';
+    }
 }

@@ -8,7 +8,6 @@ public class CountEvens {
 
         System.out.println(countEven(numbers));
 
-
     }
 
     public static int countEven (int[] numbers){
