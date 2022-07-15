@@ -15,5 +15,7 @@ public class TestCircle {
 
         System.out.println(Circle.getNumberOfCircles());
 
+        System.out.println("-------------------------------------------");
+
     }
 }
