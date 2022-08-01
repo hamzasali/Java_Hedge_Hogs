@@ -1,4 +1,4 @@
-package alena;
+package alena.tasks;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
