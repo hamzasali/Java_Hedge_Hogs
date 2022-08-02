@@ -19,21 +19,34 @@ public class TestObjects {
 
         System.out.println("--------------------------------");
 
-        int budgetAmount=600;
+        int minSquare=600;
 
-        System.out.println(request(properties, budgetAmount));
+        System.out.println(request(properties, minSquare));
 
     }
 
-    public static ArrayList<PropertyList> request(ArrayList<PropertyList> properties, int budgetAmount){
-
+    public static ArrayList<String> request(ArrayList<PropertyList> properties, int minSquare){
+/*
         ArrayList<PropertyList> result=new ArrayList<>();
 
         for (PropertyList each : properties) {
-            if(each.area()>=budgetAmount){
+            if(each.area()>=minSquare){
                 result.add(each);
             }
         }
-        return result;
+
+ */
+
+        properties.removeIf(each->each.area()<minSquare);
+
+        ArrayList<String> names=new ArrayList<>();
+
+        for (PropertyList each : properties) {
+            names.add(each.getName());
+        }
+
+        return names;
     }
+
+
 }
