@@ -35,7 +35,7 @@ public class Main {
     }
 
 //    public static String newMethodForApply(Double latitude, Double longitude, BiFunction<Double, Double, String> biFunction) {
-//        return biFunction.apply(latitude, longitude);                    // Line 6
+//        return biFunction.apply(latitude, longitude);                    //  Line 6
 //    }
 
 }
