@@ -30,9 +30,9 @@ public class frequencyOfCharacter {
             for (int j = 0; j < given.length(); j++) { //comparing to other characters
                 if(given.charAt(j)==each){
                     count++;
-            }
+                }
                 frequency.put(each, count); //adding pairs to map
-             }
+            }
 
         }
 

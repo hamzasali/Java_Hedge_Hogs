@@ -6,7 +6,7 @@ import java.util.TreeMap;
 public class non_repeating_vowels {
     public static void main(String[] args) {
 
-        String given="mood";
+        String given="responsible";
 
         System.out.println(firstNonRepeatingVowel(given));
 
