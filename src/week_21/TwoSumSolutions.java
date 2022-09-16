@@ -18,9 +18,12 @@ public class TwoSumSolutions {
         while (first < last) {
             if (arr[first] + arr[last] == target) {
                 return new int[]{arr[first], arr[last]};
-            } else if (arr[first] + arr[last] < target) first++;
-            else
+            } else if (arr[first] + arr[last] < target) {
+                first++;
+            } else {
                 last--;
+            }
+
         }
         return new int[0];
     }

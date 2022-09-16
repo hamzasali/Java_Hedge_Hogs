@@ -1,6 +1,7 @@
 package linked_list_practice;
 
 import java.util.LinkedList;
+import java.util.NoSuchElementException;
 
 public class SinglyLinkedList {
 
@@ -53,5 +54,56 @@ public class SinglyLinkedList {
             }
         }
         return pointer2Slow;
+    }
+
+    public int indexOf(int value) {
+        if (isEmpty()) {
+            throw new NoSuchElementException("This linkedList does not consist of any nodes");
+        }
+
+        int index = 0;
+        Node current = head;
+
+        while (current != null) {
+            if (current.value == value) {
+                return index;
+            }
+            index++;
+            current = current.next;
+        }
+
+        return -1;
+
+    }
+
+    public void addFirst(int value) {
+        Node node = new Node(value);
+
+        if (isEmpty()) {
+            head = tail = node;
+        } else {
+            node.next = head;
+            head = node;
+        }
+
+        size++;
+    }
+
+    public int getKthFromLast(int k){//k=2
+
+        Node fast = head;
+        Node slow = head;
+
+        for (int i = 1; i < k; i++) {
+            fast = fast.next;
+        }// at the end of this for loop fast will be third node
+
+
+        while (fast!=tail){
+            fast=fast.next;
+            slow=slow.next;
+        }
+
+        return slow.value;
     }
 }

@@ -19,6 +19,8 @@ public class LinkedListApp {
         System.out.println();
         System.out.println(myList.findTheMiddleNode().value);
 
+        System.out.println(myList.getKthFromLast(5));
+
     }
 
 }
