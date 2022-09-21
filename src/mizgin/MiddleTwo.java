@@ -7,6 +7,7 @@ public class MiddleTwo {
         System.out.println(middleTwo("code"));
         System.out.println(middleTwo("string"));
         System.out.println(middleTwo("rotator")); // ---??
+        System.out.println(middleTwo("practice"));
     }
 
     public static String middleTwo(String str){
