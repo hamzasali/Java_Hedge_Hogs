@@ -5,9 +5,9 @@ import java.util.NoSuchElementException;
 
 public class SinglyLinkedList {
 
-    Node head;
-    Node tail;
-    int size;
+    public Node head;
+    public Node tail;
+    public int size;
 
     public boolean isEmpty() {
         return head == null;
@@ -89,7 +89,7 @@ public class SinglyLinkedList {
         size++;
     }
 
-    public int getKthFromLast(int k){//k=2
+    public int getKthFromLast(int k) {//k=2
 
         Node fast = head;
         Node slow = head;
@@ -99,9 +99,9 @@ public class SinglyLinkedList {
         }// at the end of this for loop fast will be third node
 
 
-        while (fast!=tail){
-            fast=fast.next;
-            slow=slow.next;
+        while (fast != tail) {
+            fast = fast.next;
+            slow = slow.next;
         }
 
         return slow.value;
