@@ -24,41 +24,45 @@ public class ListNode {
 
     static ListNode detectCycle(ListNode head) {
 
-//        HashSet<ListNode> set = new HashSet<>();
-//
-//        ListNode current = head;
-//        while (current != null) {
-//            if (set.contains(current)) return current;
-//            set.add(current);
-//            current = current.next;
-//
-//        }
-//        return null;
+      /*  {
+            HashSet<ListNode> set = new HashSet<>();
 
-        if (head == null || head.next == null) return null;
+            ListNode current = head;
+            while (current != null) {
+                if (set.contains(current)) return current;
+                set.add(current);
+                current = current.next;
 
-        ListNode slow = head;
-        ListNode fast = head;
+            }
+            return null;
+        }*/
 
-        while (fast != null && fast.next != null) {
-            slow = slow.next;
-            fast = fast.next.next;
+        {
+            if (head == null || head.next == null) return null;
 
-            if (fast == slow) {
-                ListNode firstNode = head;
-                ListNode intersection = fast;
+            ListNode slow = head;
+            ListNode fast = head;
 
-                while (firstNode != intersection) {
-                    intersection = intersection.next;
-                    firstNode = firstNode.next;
+            while (fast != null && fast.next != null) {
+                slow = slow.next;
+                fast = fast.next.next;
+
+                if (fast == slow) {
+                    ListNode firstNode = head;
+                    ListNode intersection = fast;
+
+                    while (firstNode != intersection) {
+                        intersection = intersection.next;
+                        firstNode = firstNode.next;
+                    }
+                    return firstNode;
                 }
-                return firstNode;
+
             }
 
+
+            return null;
         }
-
-
-        return null;
     }
 
 }
