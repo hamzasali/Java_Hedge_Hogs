@@ -6,9 +6,9 @@ public class MoveZerosToEnd {
 
     public static void main(String[] args) {
         int[] arr = {0, 1, 0, 2, 0, 3, 7};
-        // moveZerosToEnd(arr);
-        //moveZerosToEnd(arr);
-        oneLoopOneIf(arr);
+
+        moveZerosToEnd(arr);
+        //oneLoopOneIf(arr);
         System.out.println(Arrays.toString(arr));
     }
 
