@@ -6,6 +6,7 @@ public class GreaterThanRight {
 
     // Function to print all elements which are greater than all // elements present to their right
     public static void find(int[] arr) {
+        if (arr == null || arr.length == 0) return;
         Stack<Integer> stack = new Stack<>();
 
         for (int each : arr) {
@@ -18,7 +19,7 @@ public class GreaterThanRight {
     }
 
     public static void main(String[] args) {
-        int[] arr = {10, 4, 6, 3, 5};
+        int[] arr = {10, 4, 6, 3, 5, 6};
         find(arr);
     }
 }
