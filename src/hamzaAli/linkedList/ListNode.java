@@ -3,12 +3,19 @@ package hamzaAli.linkedList;
 import java.util.HashSet;
 
 public class ListNode {
-    ListNode next;
-    int val;
+    public ListNode next;
+    public int val;
 
     public ListNode(int x) {
         val = x;
         next = null;
+    }
+
+    @Override
+    public String toString() {
+        return "ListNode{" +
+                "val=" + val +
+                '}';
     }
 
     public static void main(String[] args) {
