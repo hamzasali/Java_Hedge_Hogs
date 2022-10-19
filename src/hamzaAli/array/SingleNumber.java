@@ -9,7 +9,7 @@ public class SingleNumber {
         System.out.println(singleNumber(nums));
     }
 
-    public static int singleNumber(int[] nums) {
+    public static int singleNumber(int[] nums) { //O(n)
         HashSet<Integer> set = new HashSet<>();
         for (int each : nums) {
             if (!set.add(each)) {
@@ -17,7 +17,6 @@ public class SingleNumber {
             }
         }
         return set.iterator().next();
+//        return (int) set.toArray()[0];
     }
 }
-
-
