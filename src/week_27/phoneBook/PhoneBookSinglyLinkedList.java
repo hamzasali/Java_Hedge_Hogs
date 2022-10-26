@@ -59,6 +59,8 @@ public class PhoneBookSinglyLinkedList {
         if (!map.containsKey(contact.firstName)) {
             map.put(contact.firstName,phoneBookNode);
             size++;
+        }else {
+            throw new IllegalArgumentException(contact.firstName + " has already used as a key!");
         }
 
     }
