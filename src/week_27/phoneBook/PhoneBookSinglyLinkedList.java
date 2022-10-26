@@ -141,5 +141,69 @@ public class PhoneBookSinglyLinkedList {
         throw new NoSuchElementException(firstName + " didn't match any records.");
     }
 
+    /**
+     * Time complexity: O(n) Space complexity: 0(1) As constant extra space is used.
+     * This method will delete the all nodes that have the parameterized lastName.
+     *
+     * @param lastName will indicate the all nodes that will be deleted.
+     */
+    public void deleteAllMatchingLastName(String lastName) {
+
+        int startingSize = size;
+
+        if (isEmpty()) {
+            throw new NoSuchElementException("No record available in phonebook!");
+        }
+
+        PhoneBookNode current = head;
+        PhoneBookNode prev = head;
+
+        while (current != null) {
+            if (current.contact.lastName.equals(lastName)) {
+                if (current == head) {
+                    if (size == 1) {
+                        head = tail = null;
+                    } else {
+                        head = current.next;
+                    }
+                } else if (current == tail) {
+                    tail = prev;
+                    tail.next = null;
+                } else {
+                    prev.next = current.next;
+                    current = prev;
+                }
+                size--;
+            }
+            prev = current;
+            current = current.next;
+        }
+
+        if (startingSize == size) {
+            throw new NoSuchElementException(lastName + " didn't match any records.");
+        }
+
+    }
+
+    /**
+     * Time complexity: O(n) Space complexity: 0(n) We are creating a list for all nodes in the LinkedList.
+     *
+     * @return list of PhoneBookNode with all nodes.
+     */
+    public List<PhoneBookNode> findAll() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("No record available in phonebook!");
+        }
+
+        List<PhoneBookNode> phoneBookNodeList = new ArrayList<>();
+        PhoneBookNode current = head;
+
+        while (current != null) {
+            phoneBookNodeList.add(current);
+            current = current.next;
+        }
+
+        return phoneBookNodeList;
+    }
 
 }
