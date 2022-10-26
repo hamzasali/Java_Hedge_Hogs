@@ -1,14 +1,14 @@
 package week_27.phoneBook;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.NoSuchElementException;
+import java.util.*;
 
 public class PhoneBookSinglyLinkedList {
 
     public PhoneBookNode head;
     public PhoneBookNode tail;
     public int size;
+
+    Map<String,PhoneBookNode> map = new HashMap<>();
 
     /**
      * Time complexity: O(1) Space complexity: O(1).
@@ -55,12 +55,18 @@ public class PhoneBookSinglyLinkedList {
             tail.next = phoneBookNode;
             tail = phoneBookNode;
         }
-        size++;
+
+        if (!map.containsKey(contact.firstName)) {
+            map.put(contact.firstName,phoneBookNode);
+            size++;
+        }
+
     }
 
     /**
-     * Time complexity: O(n) Space complexity: 0(1) As constant extra space is used.
-     *
+     * Time complexity: O(1)  With the help of the hash map structure,
+     * we did decrease the search operation complexity to the O(1).
+     * Space complexity: 0(1) As constant extra space is used.
      * @param firstName this parameter will give the first corresponding node in LinkedList.
      * @return the PhoneBookNode object that has parameterized firstName.
      */
@@ -68,15 +74,13 @@ public class PhoneBookSinglyLinkedList {
         if (isEmpty()) {
             throw new NoSuchElementException("No record available in phonebook!");
         }
-        PhoneBookNode current = head;
-        while (current != null) {
-            if (current.contact.firstName.equals(firstName)) {
-                return current;
-            }
 
-            current = current.next;
+        PhoneBookNode foundNode = map.get(firstName);
+
+        if (foundNode == null) {
+            throw new NoSuchElementException(firstName + " didn't match any records.");
         }
-        throw new NoSuchElementException(firstName + " didn't match any records.");
+        return foundNode;
     }
 
     /**

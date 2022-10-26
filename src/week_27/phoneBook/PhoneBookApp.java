@@ -16,7 +16,7 @@ public class PhoneBookApp {
         System.out.println(list.isEmpty());
         System.out.println(list.size);
         list.printPhoneBook();
-       // System.out.println(list.findByFirstName("Tatiana").contact);
+        System.out.println(list.findByFirstName("George").contact);
 //        list.findAllByLastName("Hanks").forEach(s-> System.out.println(s.contact));
 //        list.deleteByFirstName("John");
 //        list.printPhoneBook();
@@ -24,7 +24,7 @@ public class PhoneBookApp {
 //        list.deleteAllMatchingLastName("Hanks");
 //        list.printPhoneBook();
 
-        list.findAll().forEach(s-> System.out.println(s.contact));
+//        list.findAll().forEach(s-> System.out.println(s.contact));
 
 
     }
