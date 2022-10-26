@@ -37,6 +37,11 @@ public class PhoneBookSinglyLinkedList {
         }
     }
 
+    /**
+     * Time complexity: O(1) Space complexity: 0(1) As constant extra space is used.
+     *
+     * @param contact for creating a node object with firstName, lastName, email and phoneNumber.
+     */
     public void add(Contact contact) {
         PhoneBookNode phoneBookNode = new PhoneBookNode(contact);
 
@@ -47,6 +52,10 @@ public class PhoneBookSinglyLinkedList {
             tail = phoneBookNode;
         }
         size++;
+    }
+
+    public PhoneBookNode findByFirstName(String firstName) {
+
     }
 
 
