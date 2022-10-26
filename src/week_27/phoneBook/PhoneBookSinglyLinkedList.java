@@ -77,6 +77,12 @@ public class PhoneBookSinglyLinkedList {
         }
         throw new NoSuchElementException(firstName+ " didn't match any records.");
     }
+    /**
+     * Time complexity: O(n) Space complexity: 0(n) In the worst case all nodes might have same lastName.
+     *
+     * @param lastName this parameter will give the all nodes with this lastName in LinkedList.
+     * @return list of PhoneBookNode with the parameterized lastName.
+     */
     public List<PhoneBookNode> findAllByLastName(String lastName){
         if (isEmpty()){
             throw new NoSuchElementException("No record available in phonebook!");
