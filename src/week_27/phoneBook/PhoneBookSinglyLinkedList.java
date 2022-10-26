@@ -1,5 +1,7 @@
 package week_27.phoneBook;
 
+import java.util.NoSuchElementException;
+
 public class PhoneBookSinglyLinkedList {
 
     public PhoneBookNode head;
@@ -53,9 +55,25 @@ public class PhoneBookSinglyLinkedList {
         }
         size++;
     }
-
+    /**
+     * Time complexity: O(n) Space complexity: 0(1) As constant extra space is used.
+     *
+     * @param firstName this parameter will give the first corresponding node in LinkedList.
+     * @return the PhoneBookNode object that has parameterized firstName.
+     */
     public PhoneBookNode findByFirstName(String firstName) {
+        if (isEmpty()){
+            throw new NoSuchElementException("No record available in phonebook!");
+        }
+        PhoneBookNode current=head;
+        while (current!=null){
+            if (current.contact.firstName.equals(firstName)){
+                return current;
+            }
 
+            current=current.next;
+        }
+        throw new NoSuchElementException(firstName+ " didn't match any records.");
     }
 
 
