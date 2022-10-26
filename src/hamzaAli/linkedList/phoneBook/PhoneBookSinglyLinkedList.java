@@ -91,6 +91,7 @@ public class PhoneBookSinglyLinkedList {
                     current.next = null;
                 }
                 size--;
+                return;
             }
             prev = current;
             current = current.next;
@@ -98,30 +99,38 @@ public class PhoneBookSinglyLinkedList {
     }
 
     public void deleteAllMatchingLastName(String lastName) {
+        int startingSize = size;
+
         if (isEmpty()) {
-            System.out.println("List is Empty");
-            return;
+            throw new NoSuchElementException("No record available in phonebook!");
         }
+
         PhoneBookNode current = head;
         PhoneBookNode prev = head;
 
-        while (current != null && current.next != null) {
-            if (current.contact.lastName.equalsIgnoreCase(lastName)) {
+        while (current != null) {
+            if (current.contact.lastName.equals(lastName)) {
                 if (current == head) {
-                    current = current.next;
-                    current.next = null;
-                }
-                if (current == tail) {
+                    if (size == 1) {
+                        head = tail = null;
+                    } else {
+                        head = current.next;
+                    }
+                } else if (current == tail) {
                     tail = prev;
-                    prev.next = null;
+                    tail.next = null;
                 } else {
                     prev.next = current.next;
-                    current.next = null;
+                    current = prev;
                 }
                 size--;
             }
             prev = current;
             current = current.next;
+        }
+
+        if (startingSize == size) {
+            throw new NoSuchElementException(lastName + " didn't match any records.");
         }
     }
 

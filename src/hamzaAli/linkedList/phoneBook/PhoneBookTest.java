@@ -23,13 +23,13 @@ public class PhoneBookTest {
 //        list.deleteByFirstName("Micheal");
 //        list.printPhoneBook();
 //        System.out.println("---");
-        list.findAllByLastName("Mike").forEach(s -> System.out.println(s.contact));
+//        list.findAllByLastName("Mike").forEach(s -> System.out.println(s.contact));
 //        System.out.println("---");
-//        list.deleteAllMatchingLastName("Mike");
+        list.deleteAllMatchingLastName("Mike");
 //        System.out.println("---");
 //        list.printPhoneBook();
 //        System.out.println("---");
-//        System.out.println(list.findAll());
+        list.findAll().forEach(s -> System.out.println(s.contact));
 //        System.out.println("---");
 
 
