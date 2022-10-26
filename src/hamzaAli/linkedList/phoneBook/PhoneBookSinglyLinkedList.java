@@ -2,6 +2,7 @@ package hamzaAli.linkedList.phoneBook;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class PhoneBookSinglyLinkedList {
     public PhoneBookNode head;
@@ -39,7 +40,7 @@ public class PhoneBookSinglyLinkedList {
         PhoneBookNode current = head;
 
         if (isEmpty()) {
-            return null;
+            throw new NoSuchElementException("Phonebook is empty");
         }
         while (current != null) {
             if (current.contact.firstName.toLowerCase().equalsIgnoreCase(firstName)) {
@@ -48,7 +49,7 @@ public class PhoneBookSinglyLinkedList {
             current = current.next;
         }
 
-        return null;
+        throw new NoSuchElementException(firstName + " not found");
     }
 
     public List<PhoneBookNode> findAllByLastName(String lastName) {
@@ -128,9 +129,9 @@ public class PhoneBookSinglyLinkedList {
         List<PhoneBookNode> list = new ArrayList<>();
         PhoneBookNode current = head;
 
-        while (current!=null){
+        while (current != null) {
             list.add(current);
-            current=current.next;
+            current = current.next;
         }
         return list;
     }

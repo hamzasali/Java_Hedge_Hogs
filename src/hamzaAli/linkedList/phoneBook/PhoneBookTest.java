@@ -13,24 +13,24 @@ public class PhoneBookTest {
         list.add(contact2);
         list.add(contact3);
         list.add(contact4);
-        System.out.println("---");
-        list.printPhoneBook();
-        System.out.println("---");
-        System.out.println(list.size());
-        System.out.println("---");
-        System.out.println(list.findByFirstName("David"));
-        System.out.println("---");
-        list.deleteByFirstName("Micheal");
-        list.printPhoneBook();
-        System.out.println("---");
-        System.out.println(list.findAllByLastName("Mike"));
-        System.out.println("---");
-        list.deleteAllMatchingLastName("Mike");
-        System.out.println("---");
-        list.printPhoneBook();
-        System.out.println("---");
-        System.out.println(list.findAll());
-        System.out.println("---");
+//        System.out.println("---");
+//        list.printPhoneBook();
+//        System.out.println("---");
+//        System.out.println(list.size());
+//        System.out.println("---");
+//        System.out.println(list.findByFirstName("David").contact);
+//        System.out.println("---");
+//        list.deleteByFirstName("Micheal");
+//        list.printPhoneBook();
+//        System.out.println("---");
+        list.findAllByLastName("Mike").forEach(s -> System.out.println(s.contact));
+//        System.out.println("---");
+//        list.deleteAllMatchingLastName("Mike");
+//        System.out.println("---");
+//        list.printPhoneBook();
+//        System.out.println("---");
+//        System.out.println(list.findAll());
+//        System.out.println("---");
 
 
     }

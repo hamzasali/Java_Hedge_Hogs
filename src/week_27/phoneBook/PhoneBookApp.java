@@ -18,6 +18,8 @@ public class PhoneBookApp {
         list.printPhoneBook();
        // System.out.println(list.findByFirstName("Tatiana").contact);
         list.findAllByLastName("Hanks").forEach(s-> System.out.println(s.contact));
+        list.deleteByFirstName("John");
+        list.printPhoneBook();
 
 
     }

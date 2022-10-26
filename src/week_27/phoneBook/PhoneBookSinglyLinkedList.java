@@ -35,7 +35,7 @@ public class PhoneBookSinglyLinkedList {
         PhoneBookNode current = head;
         Integer element = 1;
         while (current != null) {
-            System.out.println(element +". "+ current.contact);
+            System.out.println(element + ". " + current.contact);
             element++;
             current = current.next;
         }
@@ -49,14 +49,15 @@ public class PhoneBookSinglyLinkedList {
     public void add(Contact contact) {
         PhoneBookNode phoneBookNode = new PhoneBookNode(contact);
 
-        if(isEmpty()) {
+        if (isEmpty()) {
             head = tail = phoneBookNode;
-        }else {
+        } else {
             tail.next = phoneBookNode;
             tail = phoneBookNode;
         }
         size++;
     }
+
     /**
      * Time complexity: O(n) Space complexity: 0(1) As constant extra space is used.
      *
@@ -64,48 +65,81 @@ public class PhoneBookSinglyLinkedList {
      * @return the PhoneBookNode object that has parameterized firstName.
      */
     public PhoneBookNode findByFirstName(String firstName) {
-        if (isEmpty()){
+        if (isEmpty()) {
             throw new NoSuchElementException("No record available in phonebook!");
         }
-        PhoneBookNode current=head;
-        while (current!=null){
-            if (current.contact.firstName.equals(firstName)){
+        PhoneBookNode current = head;
+        while (current != null) {
+            if (current.contact.firstName.equals(firstName)) {
                 return current;
             }
 
-            current=current.next;
+            current = current.next;
         }
-        throw new NoSuchElementException(firstName+ " didn't match any records.");
+        throw new NoSuchElementException(firstName + " didn't match any records.");
     }
+
     /**
      * Time complexity: O(n) Space complexity: 0(n) In the worst case all nodes might have same lastName.
      *
      * @param lastName this parameter will give the all nodes with this lastName in LinkedList.
      * @return list of PhoneBookNode with the parameterized lastName.
      */
-    public List<PhoneBookNode> findAllByLastName(String lastName){
-        if (isEmpty()){
+    public List<PhoneBookNode> findAllByLastName(String lastName) {
+        if (isEmpty()) {
             throw new NoSuchElementException("No record available in phonebook!");
         }
-        List<PhoneBookNode>phoneBookNodeList=new ArrayList<>();
+        List<PhoneBookNode> phoneBookNodeList = new ArrayList<>();
 
-        PhoneBookNode current=head;
-        while (current!=null){
+        PhoneBookNode current = head;
+        while (current != null) {
             if (current.contact.lastName.equals(lastName)) {
                 phoneBookNodeList.add(current);
             }
-            current=current.next;
+            current = current.next;
         }
-        if(phoneBookNodeList.isEmpty()){
-            throw new NoSuchElementException(lastName+ " didn't match any records.");
+        if (phoneBookNodeList.isEmpty()) {
+            throw new NoSuchElementException(lastName + " didn't match any records.");
         }
         return phoneBookNodeList;
 
 
     }
+    /**
+     * Time complexity: O(n) Space complexity: 0(1) As constant extra space is used.
+     * This method will just delete the first occurrence of relevant record.
+     *
+     * @param firstName will indicate the first node that will be deleted.
+     */
+    public void deleteByFirstName(String firstName) {
+        if (isEmpty()) {
+            throw new NoSuchElementException("No record available in phonebook!");
+        }
+        PhoneBookNode current = head;
+        PhoneBookNode prev = head;
 
-
-
+        while (current != null) {
+            if (current.contact.firstName.equals(firstName)) {
+                if (current == head) {
+                    if (size == 1) {
+                        head = tail = null;
+                    } else {
+                        head = current.next;
+                    }
+                } else if (current == tail) {
+                    tail = prev;
+                    tail.next = null;
+                } else {
+                    prev.next = current.next;
+                }
+                size--;
+                return;
+            }
+            prev = current;
+            current = current.next;
+        }
+        throw new NoSuchElementException(firstName + " didn't match any records.");
+    }
 
 
 }

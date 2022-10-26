@@ -7,10 +7,4 @@ public class PhoneBookNode {
         this.contact = contact;
     }
 
-    @Override
-    public String toString() {
-        return "PhoneBookNode{" +
-                "contact=" + contact +
-                '}';
-    }
 }
