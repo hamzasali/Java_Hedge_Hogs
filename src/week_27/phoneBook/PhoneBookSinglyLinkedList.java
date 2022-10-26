@@ -1,5 +1,7 @@
 package week_27.phoneBook;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 public class PhoneBookSinglyLinkedList {
@@ -75,6 +77,29 @@ public class PhoneBookSinglyLinkedList {
         }
         throw new NoSuchElementException(firstName+ " didn't match any records.");
     }
+    public List<PhoneBookNode> findAllByLastName(String lastName){
+        if (isEmpty()){
+            throw new NoSuchElementException("No record available in phonebook!");
+        }
+        List<PhoneBookNode>phoneBookNodeList=new ArrayList<>();
+
+        PhoneBookNode current=head;
+        while (current!=null){
+            if (current.contact.lastName.equals(lastName)) {
+                phoneBookNodeList.add(current);
+            }
+            current=current.next;
+        }
+        if(phoneBookNodeList.isEmpty()){
+            throw new NoSuchElementException(lastName+ " didn't match any records.");
+        }
+        return phoneBookNodeList;
+
+
+    }
+
+
+
 
 
 }

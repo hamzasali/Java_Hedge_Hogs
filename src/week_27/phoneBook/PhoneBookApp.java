@@ -11,10 +11,13 @@ public class PhoneBookApp {
         list.add(new Contact("Lora","Bruce","lora@cydeo.com","0123456789"));
         list.add(new Contact("Karla","Henderson","karla@cydeo.com","0123456789"));
         list.add(new Contact("George","Hanks","george@cydeo.com","0123456789"));
+        list.add(new Contact("George","Hanks","george@cydeo.com","0123456789"));
 
         System.out.println(list.isEmpty());
         System.out.println(list.size);
         list.printPhoneBook();
+       // System.out.println(list.findByFirstName("Tatiana").contact);
+        list.findAllByLastName("Hanks").forEach(s-> System.out.println(s.contact));
 
 
     }
