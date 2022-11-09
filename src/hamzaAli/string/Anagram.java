@@ -4,8 +4,11 @@ import java.util.Arrays;
 
 public class Anagram {
     public static void main(String[] args) {
-        String str1 = "cat";
-        String str2 = "rat";
+        String str1 = "anagram";
+        String str2 = "nagaram";
+
+//        String str1 = "cat@$#";
+//        String str2 = "$act@#";
         System.out.println(isAnagram(str1, str2));
     }
 
@@ -24,6 +27,8 @@ public class Anagram {
         System.out.println(chars1);
         System.out.println(chars2);
         return false;
+
+//        return Arrays.equals(chars1, chars2);
     }
 
 }
