@@ -3,6 +3,29 @@ package week_29.tree;
 public class MyTree {
     MyNode root;
 
+    void insert(int value) {
+        MyNode node = new MyNode(value);
 
+        if (root == null) {
+            root = node;
+        }
+        MyNode current = root;
+        while (true) {
+            if (value <= current.value) {
+                if (current.leftChild == null) {
+                    current.leftChild = node;
+                    break;
+                }
+                current = current.leftChild;
+            }else {
+                if (current.rightChild == null) {
+                    current.rightChild = node;
+                    break;
+                }
+                current = current.rightChild;
+            }
+        }
+
+    }
 
 }
