@@ -1,5 +1,8 @@
 package week_29.tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class MyTree {
     MyNode root;
 
@@ -26,6 +29,26 @@ public class MyTree {
             }
         }
 
+    }
+
+    void levelOrderTraversal() {
+        if (root == null) {
+            return;
+        }
+
+        Queue<MyNode> queue = new LinkedList<>();
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+            MyNode toVisit = queue.poll();
+            System.out.print(toVisit.value + " ");
+            if (toVisit.rightChild != null) {
+                queue.add(toVisit.rightChild);
+            }
+            if (toVisit.leftChild != null) {
+                queue.add(toVisit.leftChild);
+            }
+        }
     }
 
 }
