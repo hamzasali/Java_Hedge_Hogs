@@ -13,7 +13,12 @@ public class MyTreeApplication {
         tree.insert(8);
         tree.insert(22);
 
+
         VisualizeTree.printTree(tree.root,null,false);
+
+        tree.inOrder(tree.root);
+
+
 
     }
 }
