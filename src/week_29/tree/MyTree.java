@@ -20,7 +20,7 @@ public class MyTree {
                     break;
                 }
                 current = current.leftChild;
-            }else {
+            } else {
                 if (current.rightChild == null) {
                     current.rightChild = node;
                     break;
@@ -42,13 +42,20 @@ public class MyTree {
         while (!queue.isEmpty()) {
             MyNode toVisit = queue.poll();
             System.out.print(toVisit.value + " ");
-            if (toVisit.rightChild != null) {
-                queue.add(toVisit.rightChild);
-            }
             if (toVisit.leftChild != null) {
                 queue.add(toVisit.leftChild);
             }
+            if (toVisit.rightChild != null) {
+                queue.add(toVisit.rightChild);
+            }
         }
+    }
+
+    void postOrder(MyNode root) {
+        if (root == null) return;
+        postOrder(root.leftChild);
+        postOrder(root.rightChild);
+        System.out.println(root.value + " ");
     }
 
 }
