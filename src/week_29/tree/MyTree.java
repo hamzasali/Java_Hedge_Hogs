@@ -56,6 +56,24 @@ public class MyTree {
         postOrder(root.leftChild);
         postOrder(root.rightChild);
         System.out.println(root.value + " ");
+
     }
+
+    void preOrder(MyNode root) {
+        if (root == null) return;
+        System.out.println(root.value + " ");
+        preOrder(root.leftChild);
+        preOrder(root.rightChild);
+
+    }
+
+    void inOrder(MyNode root) {
+        if (root == null) return;
+        inOrder(root.leftChild);
+        System.out.println(root.value + " ");
+        inOrder(root.rightChild);
+
+    }
+
 
 }
