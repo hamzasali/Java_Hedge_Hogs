@@ -103,7 +103,7 @@ public class MyTree {
         printLeaves(root.leftChild);
         printLeaves(root.rightChild);
         if (isLeaf(root)) {
-            System.out.print(root.value + ", ");
+            System.out.print(root.value + " ");
         }
     }
 
