@@ -20,7 +20,7 @@ public class MyTree {
                     break;
                 }
                 current = current.leftChild;
-            }else {
+            } else {
                 if (current.rightChild == null) {
                     current.rightChild = node;
                     break;
@@ -49,6 +49,13 @@ public class MyTree {
                 queue.add(toVisit.leftChild);
             }
         }
+    }
+
+    void postOrder(MyNode root) {
+        if (root == null) return;
+        postOrder(root.leftChild);
+        postOrder(root.rightChild);
+        System.out.println(root.value + " ");
     }
 
 }
