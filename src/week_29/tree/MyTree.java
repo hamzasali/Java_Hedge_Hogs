@@ -11,6 +11,7 @@ public class MyTree {
 
         if (root == null) {
             root = node;
+            return;
         }
         MyNode current = root;
         while (true) {
