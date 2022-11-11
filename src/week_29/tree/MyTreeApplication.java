@@ -15,5 +15,11 @@ public class MyTreeApplication {
 
         VisualizeTree.printTree(tree.root,null,false);
 
+        tree.printLeaves(tree.root);
+        System.out.println();
+        System.out.println(tree.countLeaves(tree.root));
+        System.out.println(tree.findSumOfLeaves(tree.root));
+        System.out.println(tree.height(tree.root));
+
     }
 }

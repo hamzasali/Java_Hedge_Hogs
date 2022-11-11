@@ -76,5 +76,65 @@ public class MyTree {
 
     }
 
+    public boolean contains(int value) {
+        if (root == null) return false;
+
+        MyNode current = root;
+        while (current != null) {
+            if (value < current.value) {
+                current = current.leftChild;
+            } else if (value > current.value) {
+                current = current.rightChild;
+            } else {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean isLeaf(MyNode node) {
+        return node.leftChild == null && node.rightChild == null;
+    }
+
+    public void printLeaves(MyNode root) {
+        if (root == null) {
+            return;
+        }
+        printLeaves(root.leftChild);
+        printLeaves(root.rightChild);
+        if (isLeaf(root)) {
+            System.out.print(root.value + ", ");
+        }
+    }
+
+    int countLeaves(MyNode root) {
+        if (root == null) {
+            return 0;
+        }
+        if (isLeaf(root)) {
+            return 1;
+        }
+        return countLeaves(root.leftChild) + countLeaves(root.rightChild);
+    }
+
+    int findSumOfLeaves(MyNode root) {
+        if (root == null) {
+            return 0;
+        }
+        if (isLeaf(root)) {
+            return root.value;
+        }
+        return findSumOfLeaves(root.leftChild) + findSumOfLeaves(root.rightChild);
+    }
+
+    int height(MyNode root) {
+        if (root == null) {
+            return -1;
+        }
+        if (isLeaf(root)) {
+            return 0;
+        }
+        return 1 + Math.max(height(root.leftChild), height(root.rightChild));
+    }
 
 }
