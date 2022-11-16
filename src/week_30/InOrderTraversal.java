@@ -22,6 +22,8 @@ public class InOrderTraversal {
         System.out.println(inorderTraversal(tree.root));
         System.out.println(inorderTraversalWithIterationReturnList(tree.root));
         System.out.println(inOrderTraversalOther(tree.root));
+//        System.out.println(inOrderTraversal2(tree.root));
+
     }
 
     public static List<Integer> inorderTraversal(MyNode root) {
@@ -68,4 +70,21 @@ public class InOrderTraversal {
         inOrderTraversalOther(root.rightChild);
         return list;
     }
+
+    public static List<Integer> inOrderTraversal2(MyNode root) { // L-N-R
+        Stack<MyNode> stack = new Stack();
+        List<Integer> output = new ArrayList<>();
+
+        while (!stack.isEmpty() || root != null) {
+            while (root != null) {
+                stack.push(root);
+                root = root.leftChild;
+            }
+            root = stack.pop();
+            output.add(root.value);
+            root = root.rightChild;
+        }
+        return output;
+    }
+
 }
