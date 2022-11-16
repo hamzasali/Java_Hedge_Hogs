@@ -4,9 +4,9 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class MyTree {
-    MyNode root;
+    public MyNode root;
 
-    void insert(int value) {
+    public void insert(int value) {
         MyNode node = new MyNode(value);
 
         if (root == null) {
@@ -32,7 +32,7 @@ public class MyTree {
 
     }
 
-    void levelOrderTraversal() {
+    public void levelOrderTraversal() {
         if (root == null) {
             return;
         }
@@ -52,7 +52,7 @@ public class MyTree {
         }
     }
 
-    void postOrder(MyNode root) {
+    public void postOrder(MyNode root) {
         if (root == null) return;
         postOrder(root.leftChild);
         postOrder(root.rightChild);
@@ -60,7 +60,7 @@ public class MyTree {
 
     }
 
-    void preOrder(MyNode root) {
+    public void preOrder(MyNode root) {
         if (root == null) return;
         System.out.println(root.value + " ");
         preOrder(root.leftChild);
@@ -68,7 +68,7 @@ public class MyTree {
 
     }
 
-    void inOrder(MyNode root) {
+    public void inOrder(MyNode root) {
         if (root == null) return;
         inOrder(root.leftChild);
         System.out.println(root.value + " ");
@@ -107,7 +107,7 @@ public class MyTree {
         }
     }
 
-    int countLeaves(MyNode root) {
+    public int countLeaves(MyNode root) {
         if (root == null) {
             return 0;
         }
@@ -117,7 +117,7 @@ public class MyTree {
         return countLeaves(root.leftChild) + countLeaves(root.rightChild);
     }
 
-    int findSumOfLeaves(MyNode root) {
+    public int findSumOfLeaves(MyNode root) {
         if (root == null) {
             return 0;
         }
@@ -127,7 +127,7 @@ public class MyTree {
         return findSumOfLeaves(root.leftChild) + findSumOfLeaves(root.rightChild);
     }
 
-    int height(MyNode root) {
+    public int height(MyNode root) {
         if (root == null) {
             return -1;
         }
