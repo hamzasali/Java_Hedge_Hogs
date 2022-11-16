@@ -1,14 +1,16 @@
 package week_30;
 
+import java.util.LinkedList;
+
 public class ValidParentheses {
 
     public static void main(String[] args) {
-        String str="(()";
+        String str = "(())";
         System.out.println(longestValidParentheses(str));
+        System.out.println(longestValidParentheses2(str));
 
 
     }
-
 
 
     public static int longestValidParentheses(String s) {
@@ -43,9 +45,28 @@ public class ValidParentheses {
                 open = close = 0;
             }
         }
-       return maxLen;
+        return maxLen;
 
 
+    }
+
+    public static int longestValidParentheses2(String s) {
+        LinkedList<Integer> stack = new LinkedList<>();
+        stack.push(-1);
+        int result = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '(') {
+                stack.push(i);
+            } else {
+                stack.pop();
+                if (stack.isEmpty()) {
+                    stack.push(i);
+                } else {
+                    result = Math.max(result, i - stack.peek());
+                }
+            }
+        }
+        return result;
     }
 }
 
