@@ -5,6 +5,8 @@ import week_29.tree.MyTree;
 import week_29.tree.VisualizeTree;
 
 import java.util.ArrayDeque;
+import java.util.LinkedList;
+import java.util.Queue;
 
 
 public class SameTree {
@@ -79,15 +81,15 @@ public class SameTree {
             return false;
         }
 
-        ArrayDeque<MyNode> dequeP = new ArrayDeque<>();
-        ArrayDeque<MyNode> dequeQ = new ArrayDeque<>();
+        Queue<MyNode> dequeP = new LinkedList<>();
+        Queue<MyNode> dequeQ = new LinkedList<>();
 
-        dequeP.addLast(p);
-        dequeQ.addLast(q);
+        dequeP.add(p);
+        dequeQ.add(q);
 
         while (!dequeP.isEmpty()) {
-            p = dequeP.removeFirst();
-            q = dequeQ.removeFirst();
+            p = dequeP.remove();
+            q = dequeQ.remove();
 
             if (!check(p, q)) {
                 return false;
@@ -97,15 +99,15 @@ public class SameTree {
                     return false;
                 }
                 if (p.leftChild != null) {
-                    dequeP.addLast(p.leftChild);
-                    dequeQ.addLast(q.leftChild);
+                    dequeP.add(p.leftChild);
+                    dequeQ.add(q.leftChild);
                 }
                 if (!check(p.rightChild, q.rightChild)) {
                     return false;
                 }
                 if (p.rightChild != null) {
-                    dequeP.addLast(p.rightChild);
-                    dequeQ.addLast(q.rightChild);
+                    dequeP.add(p.rightChild);
+                    dequeQ.add(q.rightChild);
                 }
 
             }
