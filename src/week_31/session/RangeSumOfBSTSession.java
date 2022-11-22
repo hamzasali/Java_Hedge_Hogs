@@ -4,6 +4,8 @@ import week_29.tree.MyNode;
 import week_29.tree.MyTree;
 import week_29.tree.VisualizeTree;
 
+import java.util.Stack;
+
 public class RangeSumOfBSTSession {
     public static void main(String[] args) {
         MyTree tree = new MyTree();
@@ -17,7 +19,8 @@ public class RangeSumOfBSTSession {
 
         VisualizeTree.printTree(tree.root, null, false);
 
-        System.out.println(rangeSumBST(tree.root, 7, 15));
+//        System.out.println(rangeSumBST(tree.root, 7, 15));
+        System.out.println(rangeSumBST1(tree.root, 7, 15));
 
     }
 
@@ -33,6 +36,34 @@ public class RangeSumOfBSTSession {
         }
         rangeSumBST(root.rightChild, low, high);
         return sum;
+    }
+
+    public static int rangeSumBST1(MyNode root, int low, int high) {
+
+        int result = 0;
+
+        Stack<MyNode> stack = new Stack<>();
+        stack.push(root);
+
+        while (!stack.isEmpty()) {
+            MyNode current = stack.pop();
+
+            if (current != null) {
+
+                if (current.value >= low && current.value <= high) {
+                    result += current.value;
+                }
+                if (current.value > low) {
+                    stack.push(current.leftChild);
+                }
+                if (current.value < high) {
+                    stack.push(current.rightChild);
+                }
+            }
+
+        }
+
+        return result;
     }
 
 }
