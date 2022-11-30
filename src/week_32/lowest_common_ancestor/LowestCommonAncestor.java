@@ -37,6 +37,8 @@ public class LowestCommonAncestor {
         //todo @students call their solution method here and print the output to the console. expected output for this sample is 16
         System.out.println("PRINT YOUR SOLUTION METHOD'S RETURN VALUE");
         System.out.println(lca(root, p, q).val);
+        System.out.println(lowestCommonAncestor(root, p, q).val);
+
         System.out.println("\n***************************************************\n");
         //endregion
 
