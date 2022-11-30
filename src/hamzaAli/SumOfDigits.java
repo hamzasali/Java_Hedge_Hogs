@@ -2,12 +2,10 @@ package hamzaAli;
 
 public class SumOfDigits {
 
-    static int last, sum = 0;
 
     public static int sumOfDigitsLoop(int num) {
-
+        int last, sum = 0;
         while (num > 0) {
-
             System.out.println("sum=" + sum);
             System.out.println("before changing: " + num);
             last = num % 10;
@@ -18,7 +16,9 @@ public class SumOfDigits {
             System.out.println("sum + last = " + sum);
             System.out.println("------");
         }
-
+        if (sum > 10) {
+            return sumOfDigitsLoop(sum);
+        }
         return sum;
     }
 
@@ -29,8 +29,8 @@ public class SumOfDigits {
     }
 
     public static void main(String[] args) {
-        System.out.println("1: " + sumOfDigitsLoop(493193));
-        System.out.println("2: " + sumOfDigitsRec(493193));
+        System.out.println("1: " + sumOfDigitsLoop(4931923));
+        System.out.println("2: " + sumOfDigitsRec(4931923));
     }
 
 }
