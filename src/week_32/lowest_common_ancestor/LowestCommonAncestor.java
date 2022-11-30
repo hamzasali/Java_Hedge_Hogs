@@ -1,6 +1,8 @@
 package week_32.lowest_common_ancestor;
 
 
+import hamzaAli.tree.Ancestor;
+
 /**
  * https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree
  */
@@ -19,6 +21,8 @@ public class LowestCommonAncestor {
 
         //todo @students call their solution method here and print the output to the console. expected output for this sample is 13
         System.out.println("PRINT YOUR SOLUTION METHOD'S RETURN VALUE");
+        System.out.println(lowestCommonAncestor(root, p, q).val);
+        System.out.println(lca(root, p, q).val);
         System.out.println("\n***************************************************\n");
         //endregion
 
@@ -32,6 +36,7 @@ public class LowestCommonAncestor {
 
         //todo @students call their solution method here and print the output to the console. expected output for this sample is 16
         System.out.println("PRINT YOUR SOLUTION METHOD'S RETURN VALUE");
+        System.out.println(lca(root, p, q).val);
         System.out.println("\n***************************************************\n");
         //endregion
 
@@ -49,7 +54,7 @@ public class LowestCommonAncestor {
         //endregion
     }
 
-    static TreeNode getSampleTreeNode2(){
+    static TreeNode getSampleTreeNode2() {
         TreeNode root = new TreeNode(-10);
         root.left = new TreeNode(-15);
         root.right = new TreeNode(0);
@@ -60,7 +65,7 @@ public class LowestCommonAncestor {
         return root;
     }
 
-    static TreeNode getSampleTreeNode1(){
+    static TreeNode getSampleTreeNode1() {
         TreeNode root = new TreeNode(13);
         root.left = new TreeNode(5);
         root.right = new TreeNode(16);
@@ -74,5 +79,34 @@ public class LowestCommonAncestor {
         return root;
     }
 
+    public static TreeNode lca(TreeNode root, TreeNode p, TreeNode q) {
+        int max = Math.max(p.val, q.val);
+        int min = Math.min(p.val, q.val);
+
+
+        while (root != null) {
+            if (root.val < min) {
+                root = root.right;
+            } else if (root.val > max) {
+                root = root.left;
+            } else {
+                return root;
+            }
+        }
+        return null;
+    }
+
+    public static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+
+        if (p.val < root.val && q.val < root.val) {
+            return lowestCommonAncestor(root.left, p, q);
+        }
+
+        if (p.val > root.val && q.val > root.val) {
+            return lowestCommonAncestor(root.right, p, q);
+        }
+        return root;
+
+    }
 }
 
