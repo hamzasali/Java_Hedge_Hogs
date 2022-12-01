@@ -1,7 +1,6 @@
 package week_32.lowest_common_ancestor;
 
 
-import hamzaAli.tree.Ancestor;
 
 /**
  * https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree
