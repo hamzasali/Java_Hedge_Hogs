@@ -1,9 +1,6 @@
 package hamzaAli.array;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class MissingNumber {
     public static int missing(int[] nums) {
@@ -21,16 +18,36 @@ public class MissingNumber {
 //        }
 //        return 0;
 
-        Set<Integer> integerSet = new HashSet<>();
+        /** Sorting */
+
+//        Arrays.sort(nums);
+//        for (int i = 0; i < nums.length; i++) {
+//            if (nums[i] != i) {
+//                return i;
+//            }
+//        }
+//        return nums.length;
+
+//        Set<Integer> integerSet = new HashSet<>();
+//        for (int num : nums) {
+//            integerSet.add(num);
+//        }
+//        for (int i = 0; i <= nums.length; i++) {
+//            if (!integerSet.contains(i)) {
+//                return i;
+//            }
+//        }
+//        return 0;
+
+        /** Mathematics solution */
+
+        int n = nums.length;
+        int expected = n * (n + 1) / 2;
+        int actual = 0;
         for (int num : nums) {
-            integerSet.add(num);
+            actual += num;
         }
-        for (int i = 0; i <= nums.length; i++) {
-            if (!integerSet.contains(i)) {
-                return i;
-            }
-        }
-        return 0;
+        return expected - actual;
     }
 
     public static void main(String[] args) {
