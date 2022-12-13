@@ -1,4 +1,4 @@
-package hamzaAli.array;
+package hamzaAli.wk33;
 public class StockBuyAndSell {
     public static void main(String[] args) {
         int[] prices1 = {7, 1, 5, 3, 6, 4};

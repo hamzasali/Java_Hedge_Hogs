@@ -1,4 +1,4 @@
-package hamzaAli.array;
+package hamzaAli.wk33;
 
 import java.util.*;
 
